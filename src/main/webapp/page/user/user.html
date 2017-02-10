@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 引入js文件 -->
+<script type="text/javascript" src="../jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="../jquery.validate.min.js"></script>
+<script type="text/javascript" src="../jquery.validate.message_cn.js"></script>
+<script type="text/javascript">
+//设置校验器的默认配置
+$.validator.setDefaults({
+    submitHandler: function(form){
+    	alert("submitted!");
+    	//form.submit();
+    }	
+})
+    $().ready(function(){
+    	
+    	$("#testHtml").validate();
+    });
+  
+
+</script>
+</head>
+<body>
+
+   <form action="" id="testHtml">
+      <h4>用户名</h4>
+      <input type="text" name="name" id="name" minlength="2" required="required">
+      
+      <h4>邮箱</h4>
+      <input type="email" name="email" id="email">
+      <br><br>
+      <input type="submit" value="提交">
+   </form>
+
+</body>
+</html>
